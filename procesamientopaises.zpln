@@ -1,0 +1,940 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "spark",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-17T03:06:34+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres3\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.SparkSession\u001b[0m = org.apache.spark.sql.SparkSession@6642319a\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663376618369_1509664050",
+      "id": "paragraph_1663376618369_1509664050",
+      "dateCreated": "2022-09-17T01:03:38+0000",
+      "dateStarted": "2022-09-17T03:06:34+0000",
+      "dateFinished": "2022-09-17T03:06:34+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1552"
+    },
+    {
+      "text": "sc",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-17T03:06:36+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres4\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.SparkContext\u001b[0m = org.apache.spark.SparkContext@7a5fe95f\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663376621227_747082506",
+      "id": "paragraph_1663376621227_747082506",
+      "dateCreated": "2022-09-17T01:03:41+0000",
+      "dateStarted": "2022-09-17T03:06:36+0000",
+      "dateFinished": "2022-09-17T03:06:36+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:1553"
+    },
+    {
+      "text": "%spark.pyspark\ndf = spark.read.csv('s3://aaja-t1-2022/trusted/clima-v1/ccrdata/run-S3bucket_node3-1-part-r-00000',inferSchema=True,header=True)\ndf = df[df['countryname'] != 'Country Name']\nz.show(df.limit(30))",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-17T03:42:52+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "countryname": "string",
+                      "countrycode": "string",
+                      "indicatorname": "string",
+                      "indicatorcode": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "countryname",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "countrycode",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "countryname\tcountrycode\tindicatorname\tindicatorcode\nCook Islands\tCOK\tAccess to electricity (% of population)\tEG.ELC.ACCS.ZS\nCook Islands\tCOK\tAccount (% age 15+)\taccount.t.d\nCook Islands\tCOK\tAccount, income, poorest 40% (% ages 15+)\taccount.t.d.7\nCook Islands\tCOK\tAdditional people below $1.90 as % of total population by impact - Agriculture Revenues\tCC.AVPB.PTPI.AR\nCook Islands\tCOK\tAdditional people below $1.90 as % of total population by impact - All impacts\tCC.AVPB.PTPI.AI\nCook Islands\tCOK\tAdditional people below $1.90 as % of total population by impact - Disasters\tCC.AVPB.PTPI.DI\nCook Islands\tCOK\tAdditional people below $1.90 as % of total population by impact - Food prices\tCC.AVPB.PTPI.FP\nCook Islands\tCOK\tAdditional people below $1.90 as % of total population by impact - Health\tCC.AVPB.PTPI.HE\nCook Islands\tCOK\tAdditional people below $1.90 as % of total population by impact - Labor productivity\tCC.AVPB.PTPI.LP\nCook Islands\tCOK\tAdditional people below $4 as % of total population by impact, by 2030 - Agriculture\tCC.AVPB.TPOP.AG\nCook Islands\tCOK\tAdditional people below $4 as % of total population by impact, by 2030 - All Impacts\tCC.AVPB.TPOP.AI\nCook Islands\tCOK\tAdditional people below $4 as % of total population by impact, by 2030 - Disasters\tCC.AVPB.TPOP.DI\nCook Islands\tCOK\tAdditional people below $4 as % of total population by impact, by 2030 - Health\tCC.AVPB.TPOP.HE\nCook Islands\tCOK\tAdditional people below $4 as % of total population by impact, by 2030 - Temperature\tCC.AVPB.TPOP.TE\nCook Islands\tCOK\tAdditional population exposed to annual coastal floods due to sea level rise, as a share of actual population (%) - Max exposure, 2050\tCC.ADPO.MIEX.BB\nCook Islands\tCOK\tAdditional population exposed to annual coastal floods due to sea level rise, as a share of actual population (%) - Max exposure, 2100\tCC.ADPO.MAEX.BB\nCook Islands\tCOK\tAdditional population exposed to annual coastal floods due to sea level rise, as a share of actual population (%) - Min. exposure, 2050\tCC.ADPO.MIEX.AA\nCook Islands\tCOK\tAdditional population exposed to annual coastal floods due to sea level rise, as a share of actual population (%) - Min. exposure, 2100\tCC.ADPO.MAEX.AA\nCook Islands\tCOK\tAgricultural land (% of land area)\tAG.LND.AGRI.ZS\nCook Islands\tCOK\tAnnual CO2 combustion emissions at operating coal mines (Mt CO2)\tCC.COAL.EMIS.CO\nCook Islands\tCOK\tAnnual CO2 combustion emissions at proposed coal projects (Mt CO2)\tCC.COAL.EMPR.CO\nCook Islands\tCOK\tAnnual coal production (Mt per year) - Operating\tCC.COAL.PROD.OP\nCook Islands\tCOK\tAnnual coal production (Mt per year) - Proposed Projects (Total)\tCC.COAL.PROD.PR\nCook Islands\tCOK\tAnnual investment needs for coastal protection, by risk strategy (% of GDP) - constant relative flood risk\tCC.INCP.KRGC\nCook Islands\tCOK\tAnnual investment needs for coastal protection, by risk strategy (% of GDP) - low risk tolerance\tCC.INCP.ALRS\nCook Islands\tCOK\tAnnual investment needs for coastal protection, by risk strategy (% of GDP) - optimal protection\tCC.INCP.SPMC\nCook Islands\tCOK\tAnnual investments needed to make transport infrastructure more resilient by 2030 (% of baseline investment costs)\tCC.TNET.INV.ZS\nCook Islands\tCOK\tAnnual methane emissions at operating coal mines (Mt CO2e 100 years)\tCC.COAL.EMIS.CH\nCook Islands\tCOK\tAnnual methane emisssions at proposed coal projects (Mt CO2e 100 years)\tCC.COAL.EMPR.CH\nCook Islands\tCOK\tArable land (% of land area)\tAG.LND.ARBL.ZS\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=103",
+              "$$hashKey": "object:22080"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=104",
+              "$$hashKey": "object:22081"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=105",
+              "$$hashKey": "object:22082"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663376622358_1389946423",
+      "id": "paragraph_1663376622358_1389946423",
+      "dateCreated": "2022-09-17T01:03:42+0000",
+      "dateStarted": "2022-09-17T03:42:52+0000",
+      "dateFinished": "2022-09-17T03:42:53+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:1554"
+    },
+    {
+      "text": "%spark.pyspark\ndf.count()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-17T03:42:56+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=106",
+              "$$hashKey": "object:22833"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=107",
+              "$$hashKey": "object:22834"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663385420423_124478737",
+      "id": "paragraph_1663385420423_124478737",
+      "dateCreated": "2022-09-17T03:30:20+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:11807",
+      "dateFinished": "2022-09-17T03:42:56+0000",
+      "dateStarted": "2022-09-17T03:42:56+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "95040\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark.pyspark\ndfColombia = df[df['countryname'] == 'Colombia']\nz.show(dfColombia.limit(10))",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-17T03:42:59+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "countryname": "string",
+                      "countrycode": "string",
+                      "indicatorname": "string",
+                      "indicatorcode": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "countryname\tcountrycode\tindicatorname\tindicatorcode\nColombia\tCOL\tAccess to electricity (% of population)\tEG.ELC.ACCS.ZS\nColombia\tCOL\tAccount (% age 15+)\taccount.t.d\nColombia\tCOL\tAccount, income, poorest 40% (% ages 15+)\taccount.t.d.7\nColombia\tCOL\tAdditional people below $1.90 as % of total population by impact - Agriculture Revenues\tCC.AVPB.PTPI.AR\nColombia\tCOL\tAdditional people below $1.90 as % of total population by impact - All impacts\tCC.AVPB.PTPI.AI\nColombia\tCOL\tAdditional people below $1.90 as % of total population by impact - Disasters\tCC.AVPB.PTPI.DI\nColombia\tCOL\tAdditional people below $1.90 as % of total population by impact - Food prices\tCC.AVPB.PTPI.FP\nColombia\tCOL\tAdditional people below $1.90 as % of total population by impact - Health\tCC.AVPB.PTPI.HE\nColombia\tCOL\tAdditional people below $1.90 as % of total population by impact - Labor productivity\tCC.AVPB.PTPI.LP\nColombia\tCOL\tAdditional people below $4 as % of total population by impact, by 2030 - Agriculture\tCC.AVPB.TPOP.AG\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=108",
+              "$$hashKey": "object:22974"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663384102169_1071827459",
+      "id": "paragraph_1663384102169_1071827459",
+      "dateCreated": "2022-09-17T03:08:22+0000",
+      "dateStarted": "2022-09-17T03:42:59+0000",
+      "dateFinished": "2022-09-17T03:43:00+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:1555"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=109",
+              "$$hashKey": "object:23570"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=110",
+              "$$hashKey": "object:23571"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663384147162_1530987110",
+      "id": "paragraph_1663384147162_1530987110",
+      "dateCreated": "2022-09-17T03:09:07+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:1556",
+      "text": "%spark.pyspark\nz.show(dfColombia.count())",
+      "dateUpdated": "2022-09-17T03:43:03+0000",
+      "dateFinished": "2022-09-17T03:43:04+0000",
+      "dateStarted": "2022-09-17T03:43:03+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "432\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark.pyspark\nz.show(df.groupBy('countryname').count().sort('count'))",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-17T03:43:07+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "countryname0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "count1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1,
+                      "paginationPageSize": 250
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "countryname": "string",
+                      "count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "countryname",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=111",
+              "$$hashKey": "object:23726"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=112",
+              "$$hashKey": "object:23727"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663384593298_1662687513",
+      "id": "paragraph_1663384593298_1662687513",
+      "dateCreated": "2022-09-17T03:16:33+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:3626",
+      "dateFinished": "2022-09-17T03:43:07+0000",
+      "dateStarted": "2022-09-17T03:43:07+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "countryname\tcount\nCook Islands\t432\nNorth Macedonia\t432\nLebanon\t432\nSlovenia\t432\nNew Zealand\t432\nPoland\t432\nPortugal\t432\nMauritius\t432\nMoldova\t432\nGibraltar\t432\nGuam\t432\nEgypt, Arab Rep.\t432\nArmenia\t432\nEswatini\t432\nMexico\t432\nMicronesia, Fed. Sts.\t432\nZambia\t432\nGuyana\t432\nArgentina\t432\nAngola\t432\nAlbania\t432\nChina\t432\nNicaragua\t432\nPeru\t432\nSomalia\t432\nTurkey\t432\nCroatia\t432\nAndorra\t432\nIreland\t432\nBhutan\t432\nIsrael\t432\nSuriname\t432\nNorway\t432\nNiger\t432\nLiechtenstein\t432\nBritish Virgin Islands\t432\nAlgeria\t432\nFinland\t432\nBrunei Darussalam\t432\nBenin\t432\nTogo\t432\nSierra Leone\t432\nTurks and Caicos Islands\t432\nCayman Islands\t432\nAruba\t432\nNigeria\t432\nLithuania\t432\nSpain\t432\nSt. Martin (French part)\t432\nThailand\t432\nMongolia\t432\nCabo Verde\t432\nDjibouti\t432\nFiji\t432\nGermany\t432\nMali\t432\nNetherlands\t432\nTonga\t432\nMalawi\t432\nRwanda\t432\nCosta Rica\t432\nBahrain\t432\nNiue\t432\nPakistan\t432\nSlovak Republic\t432\nParaguay\t432\nPhilippines\t432\nUnited Kingdom\t432\nBrazil\t432\nKorea, Rep.\t432\nTrinidad and Tobago\t432\nSeychelles\t432\nTanzania\t432\nLuxembourg\t432\nNepal\t432\nUnited Arab Emirates\t432\nIndia\t432\nChile\t432\nLao PDR\t432\nSao Tome and Principe\t432\nPuerto Rico\t432\nUnited States\t432\nTuvalu\t432\nVenezuela, RB\t432\nGreece\t432\nDominica\t432\nSingapore\t432\nJordan\t432\nMaldives\t432\nSudan\t432\nKosovo\t432\nSan Marino\t432\nQatar\t432\nGhana\t432\nCuracao\t432\nBangladesh\t432\nLesotho\t432\nNew Caledonia\t432\nMarshall Islands\t432\nRussian Federation\t432\nUkraine\t432\nBelize\t432\nMozambique\t432\nKenya\t432\nSt. Vincent and the Grenadines\t432\nUzbekistan\t432\nYemen, Rep.\t432\nBotswana\t432\nJapan\t432\nBahamas, The\t432\nHaiti\t432\nBurkina Faso\t432\nBermuda\t432\nColombia\t432\nVanuatu\t432\nCyprus\t432\nGuatemala\t432\nAzerbaijan\t432\nJamaica\t432\nCanada\t432\nOman\t432\nMontenegro\t432\nLatvia\t432\nUganda\t432\nBelgium\t432\nEcuador\t432\nAmerican Samoa\t432\nMadagascar\t432\nMyanmar\t432\nKuwait\t432\nTimor-Leste\t432\nTajikistan\t432\nIsle of Man\t432\nBurundi\t432\nBolivia\t432\nCongo, Rep.\t432\nDenmark\t432\nBarbados\t432\nMonaco\t432\nNauru\t432\nTurkmenistan\t432\nIceland\t432\nChannel Islands\t432\nFrench Polynesia\t432\nEstonia\t432\nHonduras\t432\nTunisia\t432\nSaudi Arabia\t432\nZimbabwe\t432\nChad\t432\nIraq\t432\nAfghanistan\t432\nCambodia\t432\nSyrian Arab Republic\t432\nSenegal\t432\nPalau\t432\nSri Lanka\t432\nVietnam\t432\nCzech Republic\t432\nGreenland\t432\nSamoa\t432\nKorea, Dem. People's Rep.\t432\nPapua New Guinea\t432\nVirgin Islands (U.S.)\t432\nWest Bank and Gaza\t432\nFrance\t432\nEquatorial Guinea\t432\nIran, Islamic Rep.\t432\nBelarus\t432\nMacao SAR, China\t432\nSt. Lucia\t432\nSt. Kitts and Nevis\t432\nMalta\t432\nGabon\t432\nItaly\t432\nCuba\t432\nCentral African Republic\t432\nGambia, The\t432\nMauritania\t432\nMorocco\t432\nPanama\t432\nUruguay\t432\nCote d'Ivoire\t432\nGeorgia\t432\nIndonesia\t432\nGrenada\t432\nEthiopia\t432\nLibya\t432\nLiberia\t432\nNamibia\t432\nSwitzerland\t432\nGuinea\t432\nHong Kong SAR, China\t432\nFaroe Islands\t432\nAntigua and Barbuda\t432\nDominican Republic\t432\nSouth Sudan\t432\nKyrgyz Republic\t432\nEritrea\t432\nComoros\t432\nSweden\t432\nTaiwan, China\t432\nKiribati\t432\nMalaysia\t432\nSint Maarten (Dutch part)\t432\nNorthern Mariana Islands\t432\nGuinea-Bissau\t432\nBulgaria\t432\nAustria\t432\nHungary\t432\nCongo, Dem. Rep.\t432\nSolomon Islands\t432\nKazakhstan\t432\nSerbia\t432\nBosnia and Herzegovina\t432\nAustralia\t432\nCameroon\t432\nEl Salvador\t432\nRomania\t432\nSouth Africa\t432\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark.pyspark\ndfCountries = df['countryname', 'countrycode']\nz.show(dfCountries.limit(30))",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-17T03:43:17+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "countryname": "string",
+                      "countrycode": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=113",
+              "$$hashKey": "object:24315"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663384770904_1490240844",
+      "id": "paragraph_1663384770904_1490240844",
+      "dateCreated": "2022-09-17T03:19:30+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:3746",
+      "dateFinished": "2022-09-17T03:43:18+0000",
+      "dateStarted": "2022-09-17T03:43:17+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "countryname\tcountrycode\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\nCook Islands\tCOK\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark.pyspark\ndfCountries = dfCountries.groupBy('countrycode').count().sort('countrycode')\nz.show(dfCountries)",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-17T03:43:22+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "countrycode0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "count1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0,
+                          "direction": "desc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1,
+                      "paginationPageSize": 250
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "countrycode": "string",
+                      "count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=114",
+              "$$hashKey": "object:24973"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=115",
+              "$$hashKey": "object:24974"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663385710098_1686522398",
+      "id": "paragraph_1663385710098_1686522398",
+      "dateCreated": "2022-09-17T03:35:10+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:12655",
+      "dateFinished": "2022-09-17T03:43:23+0000",
+      "dateStarted": "2022-09-17T03:43:22+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "countrycode\tcount\nABW\t432\nAFG\t432\nAGO\t432\nALB\t432\nAND\t432\nARE\t432\nARG\t432\nARM\t432\nASM\t432\nATG\t432\nAUS\t432\nAUT\t432\nAZE\t432\nBDI\t432\nBEL\t432\nBEN\t432\nBFA\t432\nBGD\t432\nBGR\t432\nBHR\t432\nBHS\t432\nBIH\t432\nBLR\t432\nBLZ\t432\nBMU\t432\nBOL\t432\nBRA\t432\nBRB\t432\nBRN\t432\nBTN\t432\nBWA\t432\nCAF\t432\nCAN\t432\nCHE\t432\nCHI\t432\nCHL\t432\nCHN\t432\nCIV\t432\nCMR\t432\nCOD\t432\nCOG\t432\nCOK\t432\nCOL\t432\nCOM\t432\nCPV\t432\nCRI\t432\nCUB\t432\nCUW\t432\nCYM\t432\nCYP\t432\nCZE\t432\nDEU\t432\nDJI\t432\nDMA\t432\nDNK\t432\nDOM\t432\nDZA\t432\nECU\t432\nEGY\t432\nERI\t432\nESP\t432\nEST\t432\nETH\t432\nFIN\t432\nFJI\t432\nFRA\t432\nFRO\t432\nFSM\t432\nGAB\t432\nGBR\t432\nGEO\t432\nGHA\t432\nGIB\t432\nGIN\t432\nGMB\t432\nGNB\t432\nGNQ\t432\nGRC\t432\nGRD\t432\nGRL\t432\nGTM\t432\nGUM\t432\nGUY\t432\nHKG\t432\nHND\t432\nHRV\t432\nHTI\t432\nHUN\t432\nIDN\t432\nIMN\t432\nIND\t432\nIRL\t432\nIRN\t432\nIRQ\t432\nISL\t432\nISR\t432\nITA\t432\nJAM\t432\nJOR\t432\nJPN\t432\nKAZ\t432\nKEN\t432\nKGZ\t432\nKHM\t432\nKIR\t432\nKNA\t432\nKOR\t432\nKWT\t432\nLAO\t432\nLBN\t432\nLBR\t432\nLBY\t432\nLCA\t432\nLIE\t432\nLKA\t432\nLSO\t432\nLTU\t432\nLUX\t432\nLVA\t432\nMAC\t432\nMAF\t432\nMAR\t432\nMCO\t432\nMDA\t432\nMDG\t432\nMDV\t432\nMEX\t432\nMHL\t432\nMKD\t432\nMLI\t432\nMLT\t432\nMMR\t432\nMNE\t432\nMNG\t432\nMNP\t432\nMOZ\t432\nMRT\t432\nMUS\t432\nMWI\t432\nMYS\t432\nNAM\t432\nNCL\t432\nNER\t432\nNGA\t432\nNIC\t432\nNIU\t432\nNLD\t432\nNOR\t432\nNPL\t432\nNRU\t432\nNZL\t432\nOMN\t432\nPAK\t432\nPAN\t432\nPER\t432\nPHL\t432\nPLW\t432\nPNG\t432\nPOL\t432\nPRI\t432\nPRK\t432\nPRT\t432\nPRY\t432\nPSE\t432\nPYF\t432\nQAT\t432\nROU\t432\nRUS\t432\nRWA\t432\nSAU\t432\nSDN\t432\nSEN\t432\nSGP\t432\nSLB\t432\nSLE\t432\nSLV\t432\nSMR\t432\nSOM\t432\nSRB\t432\nSSD\t432\nSTP\t432\nSUR\t432\nSVK\t432\nSVN\t432\nSWE\t432\nSWZ\t432\nSXM\t432\nSYC\t432\nSYR\t432\nTCA\t432\nTCD\t432\nTGO\t432\nTHA\t432\nTJK\t432\nTKM\t432\nTLS\t432\nTON\t432\nTTO\t432\nTUN\t432\nTUR\t432\nTUV\t432\nTWN\t432\nTZA\t432\nUGA\t432\nUKR\t432\nURY\t432\nUSA\t432\nUZB\t432\nVCT\t432\nVEN\t432\nVGB\t432\nVIR\t432\nVNM\t432\nVUT\t432\nWSM\t432\nXKX\t432\nYEM\t432\nZAF\t432\nZMB\t432\nZWE\t432\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark.pyspark\ndfCountries.count()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-17T03:43:26+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=116",
+              "$$hashKey": "object:25496"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=117",
+              "$$hashKey": "object:25497"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=118",
+              "$$hashKey": "object:25498"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663385769105_523972462",
+      "id": "paragraph_1663385769105_523972462",
+      "dateCreated": "2022-09-17T03:36:09+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:12740",
+      "dateFinished": "2022-09-17T03:43:26+0000",
+      "dateStarted": "2022-09-17T03:43:26+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "220\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark.pyspark\ndf.count() / dfCountries.count() # hay 432 registros por pais",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-17T03:43:38+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=119",
+              "$$hashKey": "object:25665"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=120",
+              "$$hashKey": "object:25666"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=121",
+              "$$hashKey": "object:25667"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=122",
+              "$$hashKey": "object:25668"
+            },
+            {
+              "jobUrl": "http://ip-172-31-65-28.ec2.internal:4040/jobs/job?id=123",
+              "$$hashKey": "object:25669"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663385901088_446249997",
+      "id": "paragraph_1663385901088_446249997",
+      "dateCreated": "2022-09-17T03:38:21+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:15921",
+      "dateFinished": "2022-09-17T03:43:29+0000",
+      "dateStarted": "2022-09-17T03:43:29+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "432.0\n"
+          }
+        ]
+      }
+    }
+  ],
+  "name": "test",
+  "id": "2HEM38NH8",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/test"
+}
