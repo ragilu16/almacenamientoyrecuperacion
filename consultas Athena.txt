@@ -1,0 +1,6 @@
+SELECT * FROM climacountry
+
+SELECT * FROM "climaglobaltrabajo1"."climacountryserie" limit 10;
+
+SELECT * FROM ccdrcountry_series2 se
+inner join ccdrcountry co on co."country code" = se.countrycode

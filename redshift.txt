@@ -1,0 +1,80 @@
+//Creamos una tabla externa//
+
+create external schema clima_schema
+from data catalog
+database 'clima_db'
+iam_role 'arn:aws:iam::801597884486:role/LabRole'
+create external database if not exists;
+
+
+create external table clima_schema.countryseries(
+countrycode character(256),
+seriescode varchar(256),
+description character(256))
+row format delimited
+fields terminated by ','
+stored as textfile
+location 's3://aaja-trabajo1-datalake/raw/mundiales2/CCDRCountry-Series/'
+table properties ('numRows'='172000');
+
+
+select * from clima_schema.countryseries
+where seriescode like '%"SeriesCode"%';;
+
+
+
+//Creamos tabla nativa//
+
+Create table ccdrSeriesTime(
+SeriesCode varchar(200) distkey,
+Year varchar(200) not null,
+description varchar(200) not null);
+
+
+
+COPY ccdrSeriesTime FROM 's3://aaja-trabajo1-datalake/raw/mundiales2/CCDRSeries-Time/CCDRSeries-Time.csv'
+iam_role 'arn:aws:iam::801597884486:role/LabRole'
+delimiter ',' timeformat 'YYYY-MM-DD HH:MI:SS' region 'us-east-1';
+
+
+Create table countryseries(
+countrycode VARCHAR(256) distkey,
+seriescode VARCHAR(256) not null,
+description VARCHAR(256)not null);
+
+
+COPY countryseries FROM 's3://aaja-trabajo1-datalake/raw/mundiales2/CCDRCountry-Series/CCDRCountry-Series.csv'
+iam_role 'arn:aws:iam::801597884486:role/LabRole'
+delimiter ',' timeformat 'YYYY-MM-DD HH:MI:SS' region 'us-east-1';
+
+
+
+select *
+from ccdrSeriesTime st inner join clima_schema.countryseries cs on st.seriescode = cs.seriescode
+
+
+
+create external table clima_schema.climacountry(
+countrycode character(256),
+shortName varchar(256),
+tableName character(256))
+row format delimited
+fields terminated by ','
+stored as textfile
+location 's3://aaja-trabajo1-datalake/trusted/climatrusted/climacountry/'
+table properties ('numRows'='172000');
+
+create external table clima_schema.countryserie(
+countrycode character(256),
+seriescode varchar(256),
+description character(256))
+row format delimited
+fields terminated by ','
+stored as textfile
+location 's3://aaja-trabajo1-datalake/trusted/climatrusted/climacountryserie/'
+table properties ('numRows'='172000');
+
+
+select * 
+from clima_schema.climacountry cc inner join clima_schema.countryserie cs
+on cc.countrycode = cs.countrycode
